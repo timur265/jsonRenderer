@@ -30,6 +30,7 @@ const Typography = (props: TypographyProps) => {
       [classes.span]: variant === "span",
       [classes.white]: color == "white",
       [classes.black]: color == "black",
+      [classes.navbarLink]: className == "navbarLink",
     });
   };
 
