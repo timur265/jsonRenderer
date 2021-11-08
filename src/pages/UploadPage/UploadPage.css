@@ -1,0 +1,23 @@
+.inputFile {
+  display: none;
+}
+
+.uploadBtn {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  background-color: var(--color-bg-upload-btn);
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.uploadBtn:hover,
+.uploadBtn:focus,
+.uploadBtn:active {
+  background-color: var(--color-bg-upload-active-btn);
+}
+
+.uploadBtn span {
+  font-size: 18px;
+  font-weight: bold;
+}
