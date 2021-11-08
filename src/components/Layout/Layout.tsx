@@ -1,11 +1,13 @@
-import classes from "./Layout.module.css";
+import classes from "./Layout.css";
 import cn from "clsx";
 import React from "react";
 import { routes } from "src/config/routes";
 import Typography from "../ui-kit/Typography";
-import { Container } from "@material-ui/core";
 
-const Layout = (props: { children: JSX.Element; setProducts?: Function }) => {
+const Layout = (props: {
+  children: React.ReactNode;
+  setProducts?: Function;
+}) => {
   if (props.setProducts) {
     props.setProducts(1);
   }
@@ -21,9 +23,7 @@ const Layout = (props: { children: JSX.Element; setProducts?: Function }) => {
           </Typography>
         </ul>
       </nav>
-      <main>
-        <Container fixed>{props.children}</Container>
-      </main>
+      <main className={cn(classes.container)}>{props.children}</main>
     </>
   );
 };

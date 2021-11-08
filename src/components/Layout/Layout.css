@@ -21,3 +21,7 @@
 .nav-menu li:active {
   background-color: var(--color-bg-active-link-navbar);
 }
+
+.container {
+  padding: 40px 100px;
+}
