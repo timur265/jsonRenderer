@@ -19,6 +19,10 @@
   --color-bg-navbar: #03a84e;
   --color-bg-active-link-navbar: #066a34;
 
+  /* Upload Page */
+  --color-bg-upload-btn: var(--color-bg-navbar);
+  --color-bg-upload-active-btn: var(--color-bg-active-link-navbar);
+
   /* fonts */
   --font-family-primary: helvetica neue, helvetica, arial, sans-serif;
   --font-family-secondary: georgia, times new roman, times, serif;
