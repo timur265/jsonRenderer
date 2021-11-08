@@ -2,13 +2,12 @@ import React, { useRef, useState } from "react";
 import Layout from "src/components/Layout";
 import classes from "./UploadPage.css";
 import cn from "clsx";
-import { useJsonObjectsArrayStore } from "src/contexts/JsonOjectsArrayContext";
-import { observer } from "mobx-react";
 import { routes } from "src/config/routes";
 import { Redirect } from "react-router";
 import Typography from "src/components/ui-kit/Typography";
+import { useJsonObjectsArrayStore } from "src/contexts/AppContext";
 
-const UploadPage = observer(() => {
+const UploadPage = () => {
   const fileInput = useRef<HTMLInputElement>(null);
   const store = useJsonObjectsArrayStore();
   const [redirect, setRedirect] = useState("");
@@ -23,7 +22,7 @@ const UploadPage = observer(() => {
         fileReader.onload = (e) => {
           if (e.target != null && typeof e.target.result == "string") {
             const result = JSON.parse(e.target.result);
-            store.addObjects(result);
+            store.fileRendererStore.addObjects(result);
             setRedirect(routes.rendererPage);
           }
         };
@@ -59,6 +58,6 @@ const UploadPage = observer(() => {
       </>
     </Layout>
   );
-});
+};
 
 export default UploadPage;

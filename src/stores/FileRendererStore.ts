@@ -10,16 +10,11 @@ export type JsonObjectsArray = {
   registered: string;
 }[];
 
-export const createJsonObjectsArrayStore = () => ({
-  texts: [""],
-  addText(text: string) {
-    this.texts.push(text);
-  },
+const FileRendererStore = () => ({
   objects: [] as JsonObjectsArray,
   addObjects(objects: JsonObjectsArray) {
     this.objects = [...objects];
   },
-  get textCount() {
-    return this.texts.length;
-  },
 });
+
+export default FileRendererStore;
