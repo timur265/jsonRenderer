@@ -8,15 +8,13 @@ export const AppContext = React.createContext({
 });
 
 const AppContextProvider = (props: { children: JSX.Element }) => {
-  const jsonObjectsArrayStore = useLocalObservable(AppStore);
+  const store = useLocalObservable(AppStore);
 
   return (
-    <AppContext.Provider value={jsonObjectsArrayStore}>
-      {props.children}
-    </AppContext.Provider>
+    <AppContext.Provider value={store}>{props.children}</AppContext.Provider>
   );
 };
 
 export default AppContextProvider;
 
-export const useJsonObjectsArrayStore = () => React.useContext(AppContext);
+export const useAppContext = () => React.useContext(AppContext);
